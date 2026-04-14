@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ever.rest | Pitch: Lolli Luxo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ever-dark': '#0F0F0F',
+                        'ever-neon': '#00EA62',
+                        'ever-light': '#D9D9D9',
+                        'ever-muted': '#AEAEAE',
+                        'ever-surface': '#313131',
+                    },
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        heading: ['Kanit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(0, 234, 98, 0.15)',
+                        'neon-strong': '0 0 30px rgba(0, 234, 98, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0F0F0F;
+            color: #D9D9D9;
+            font-weight: 300;
+        }
+        
+        .bg-glow {
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(0,234,98,0.08) 0%, rgba(15,15,15,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-glow-1 { top: -10%; left: -20%; }
+        .bg-glow-2 { top: 40%; right: -20%; }
+
+        .card-border {
+            border: 1px solid #313131;
+            transition: all 0.3s ease;
+        }
+        .card-border:hover {
+            border-color: #00EA62;
+            box-shadow: 0 0 15px rgba(0, 234, 98, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background-color: #0F0F0F;
+            border: 2px solid #00EA62;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 24px;
+            box-shadow: 0 0 10px rgba(0, 234, 98, 0.5);
+        }
+
+        @keyframes fadeInUP {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade {
+            animation: fadeInUP 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="antialiased bg-ever-dark overflow-x-hidden">
+
+    <div class="relative flex flex-col min-h-screen w-full overflow-hidden">
+        
+        <div class="bg-glow bg-glow-1 z-0"></div>
+        <div class="bg-glow bg-glow-2 z-0"></div>
+
+        <main class="flex-grow relative z-10">
+            <!-- 1. CAPA (HERO SECTION) -->
+            <header class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative pb-16 pt-20 overflow-hidden">
+                
+                <div class="absolute inset-0 z-0">
+                    <img src="./ASSETS/BG.png" alt="Montanha" class="w-full h-full object-cover object-center opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#0F0F0F]/10 via-[#0F0F0F]/50 to-[#0F0F0F]"></div>
+                </div>
+
+                <div class="relative z-10 animate-fade w-full max-w-6xl mx-auto flex flex-col items-center">
+                    <img src="./ASSETS/LOGO - C.png" alt="ever.rest" class="h-16 md:h-20 mb-12 mix-blend-screen">
+                    
+                    <h1 class="font-heading text-3xl md:text-[52px] font-normal text-white leading-tight tracking-tight mb-4 drop-shadow-2xl whitespace-normal">
+                        O "Luxo" Real: Estrutura de Vendas e <br><span class="text-ever-neon drop-shadow-md">Posicionamento Premium.</span>
+                    </h1>
+                    
+                    <p class="font-heading text-[11px] sm:text-sm md:text-lg lg:text-xl text-ever-light mb-12 font-light drop-shadow-lg whitespace-normal max-w-3xl">
+                        Como alinhar a imagem da sua vitrine digital com o faturamento do seu caixa.
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 items-center justify-center bg-ever-surface/30 px-8 py-6 rounded-2xl border border-ever-surface/50 backdrop-blur-md">
+                        <div class="text-center md:text-right md:border-r border-ever-surface md:pr-6">
+                            <span class="block text-sm text-ever-muted uppercase tracking-wider mb-1 font-normal">Apresentado para</span>
+                            <strong class="font-heading text-xl text-white font-normal">Lolli Luxo</strong>
+                            <span class="block text-xs text-ever-neon mt-1 font-normal">(Mega Moda Park)</span>
+                        </div>
+                        <div class="text-center md:text-left md:pl-6">
+                            <span class="block text-sm text-ever-muted uppercase tracking-wider mb-1 font-normal">Apresentado por</span>
+                            <strong class="font-heading text-xl text-white font-normal">Marketing ever.rest</strong>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- METODOLOGIA DE ANÁLISE -->
+            <section class="py-24 px-6 border-b border-ever-surface relative overflow-hidden">
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+                    <div class="animate-fade delay-100">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">O Raio-X Estratégico</h2>
+                        <h3 class="font-heading text-3xl font-normal text-white mb-6">Metodologia de Análise: Como chegamos a essas informações</h3>
+                        <p class="text-ever-muted mb-8 text-lg leading-relaxed">
+                            Para a Lolli Luxo, executamos uma auditoria de contraste e um teste de usabilidade (UX) focados em conversão direta:
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-ever-surface/30 p-6 rounded-xl border-l-4 border-ever-neon">
+                                <h4 class="font-heading text-white font-light mb-2">Auditoria de Conversão (A Porta Trancada)</h4>
+                                <p class="text-sm text-ever-muted leading-relaxed">Identificamos o erro mais crítico para o varejo e atacado de moda: a ausência completa de um link de WhatsApp ou de uma chamada para ação clara. O cliente é impactado pelas fotos, mas a jornada de compra é interrompida.</p>
+                            </div>
+                            <div class="bg-ever-surface/30 p-6 rounded-xl border-l-4 border-ever-neon">
+                                <h4 class="font-heading text-white font-light mb-2">Análise de Frequência e Qualidade</h4>
+                                <p class="text-sm text-ever-muted leading-relaxed">O contraste técnico é alarmante. O último vídeo analisado data de maio de 2024, apresentando baixíssima resolução e aspecto amador, algo fatal agora em abril de 2026. Isso destrói imediatamente qualquer percepção de "luxo" que as fotos de catálogo tentam construir.</p>
+                            </div>
+                            <div class="bg-ever-surface/30 p-6 rounded-xl border-l-4 border-ever-neon">
+                                <h4 class="font-heading text-white font-light mb-2">Avaliação de Identidade Visual (Branding)</h4>
+                                <p class="text-sm text-ever-muted leading-relaxed">Há uma desconexão severa. O logotipo rosa pastel genérico destoa da essência dos produtos (vestidos de paetê escuros, brilho e atitude). Além disso, a ausência no Google Meu Negócio impede a captação do cliente de passagem física no Mega Moda Park.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex justify-center items-center animate-fade delay-200">
+                        <img src="./ASSETS/26ce41e2-b79a-4756-b339-84b3b6f93519.png" alt="Auditoria Web" class="w-full max-w-lg object-contain drop-shadow-2xl opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ever-dark via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. APRESENTAÇÃO DA MARCA -->
+            <section class="py-24 px-6 border-b border-ever-surface text-center">
+                <div class="max-w-4xl mx-auto animate-fade relative z-10">
+                    <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">Quem Somos</h2>
+                    <h3 class="font-heading text-3xl font-normal text-white mb-12">Apresentação da Marca</h3>
+                    
+                    <div class="flex justify-center mb-12">
+                        <img src="./ASSETS/Agrupar 1.png" alt="ever.rest Banner" class="w-full max-w-[22rem] rounded-2xl shadow-neon">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div class="card-border bg-ever-surface/20 p-8 rounded-2xl">
+                            <h4 class="font-heading text-xl font-light text-white mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-ever-neon rounded-full mr-3"></span> O Conceito
+                            </h4>
+                            <p class="text-ever-muted leading-relaxed">
+                                O nome <strong class="font-heading text-white font-normal">ever.rest</strong> significa <em>"sempre em descanso"</em>. Nosso propósito é garantir que a diretoria da loja tenha absoluta paz de espírito. Você foca em garantir o estoque das coleções e fechar vendas, enquanto nós assumimos toda a complexidade técnica e estética da sua marca.
+                            </p>
+                        </div>
+                        <div class="card-border bg-ever-surface/20 p-8 rounded-2xl">
+                            <h4 class="font-heading text-xl font-light text-white mb-4 flex items-center">
+                                <span class="w-2 h-2 bg-ever-neon rounded-full mr-3"></span> Nosso Papel
+                            </h4>
+                            <p class="text-ever-muted leading-relaxed">
+                                Não viemos apenas gerenciar um perfil. Viemos abrir a porta da sua loja na internet, qualificar seus clientes e elevar o seu nome para o verdadeiro patamar "Premium" na região da 44.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. DETALHES COLETADOS (DORES) -->
+            <section class="py-24 px-6 border-b border-ever-surface bg-black/40">
+                <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-stretch relative z-10">
+                    
+                    <div class="md:col-span-5 relative flex justify-center animate-fade h-full min-h-[500px]">
+                        <div class="relative w-full h-full flex justify-center items-start">
+                            <div class="absolute inset-0 bg-ever-neon/10 blur-3xl rounded-[60px] transform scale-95"></div>
+                            <img src="./ASSETS/EDITION.png" alt="Instagram Profile Mockup" class="w-full h-full object-contain object-top relative z-10 drop-shadow-2xl">
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 animate-fade delay-200">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">O Diagnóstico</h2>
+                        <h3 class="font-heading text-3xl font-normal text-white mb-10">As Falhas Fatais da Lolli Luxo</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="card-border bg-ever-surface/40 p-6 rounded-xl flex gap-4 h-full">
+                                <div class="font-heading text-ever-neon text-2xl font-normal mt-1">01</div>
+                                <div>
+                                    <h4 class="font-heading text-lg text-white font-light mb-2">A Porta Trancada (Zero WhatsApp)</h4>
+                                    <p class="text-sm text-ever-muted leading-relaxed">O seu maior ralo de vendas hoje. Vocês geram desejo com boas fotos, mas frustram o atacadista na hora da conversão porque não há um canal de atendimento direto e acessível.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-border bg-ever-surface/40 p-6 rounded-xl flex gap-4">
+                                <div class="font-heading text-ever-neon text-2xl font-normal mt-1">02</div>
+                                <div>
+                                    <h4 class="font-heading text-lg text-white font-light mb-2">A "Morte" do Vídeo e o Apagão Técnico</h4>
+                                    <p class="text-sm text-ever-muted leading-relaxed">O seu último vídeo é de 2024 e tem baixíssima qualidade (pixelado). O contraste entre as fotos posadas e os vídeos amadores espanta a cliente premium que busca vestidos de alto padrão.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-border bg-ever-surface/40 p-6 rounded-xl flex gap-4">
+                                <div class="font-heading text-ever-neon text-2xl font-normal mt-1">03</div>
+                                <div>
+                                    <h4 class="font-heading text-lg text-white font-light mb-2">A Crise de Identidade e Posicionamento</h4>
+                                    <p class="text-sm text-ever-muted leading-relaxed">O seu logotipo atual não vende os seus vestidos. Um design pastel genérico não conversa com o brilho, o paetê e a ousadia das suas peças. Além disso, vocês estão invisíveis no Google para a sacoleira que anda pelos corredores do Mega Moda Park.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. RESULTADOS ESPERADOS -->
+            <section class="py-24 px-6 border-b border-ever-surface relative z-10">
+                <div class="max-w-6xl mx-auto text-center animate-fade">
+                    <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">O Futuro</h2>
+                    <h3 class="font-heading text-3xl font-normal text-white mb-16">Resultados Esperados</h3>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Card 1 -->
+                        <div class="card-border bg-ever-surface/20 p-8 rounded-2xl flex flex-col items-center text-center">
+                            <div class="w-16 h-16 rounded-full bg-ever-surface flex items-center justify-center mb-6 shadow-neon border border-ever-neon/30">
+                                <span class="text-2xl text-ever-neon">🎯</span>
+                            </div>
+                            <h4 class="font-heading text-white font-light mb-3">Abertura das Portas (Automação)</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed">Instalação imediata de um link inteligente de WhatsApp. Recepção qualificada que separa a cliente do varejo da grande compradora de atacado, agilizando o fechamento.</p>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="card-border bg-ever-surface/20 p-8 rounded-2xl flex flex-col items-center text-center">
+                            <div class="w-16 h-16 rounded-full bg-ever-surface flex items-center justify-center mb-6 shadow-neon border border-ever-neon/30">
+                                <span class="text-2xl text-ever-neon">📊</span>
+                            </div>
+                            <h4 class="font-heading text-white font-light mb-3">O Verdadeiro "Lolli Luxo"</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed">Uma identidade visual completamente reconstruída, alinhando a estética da internet com o valor real das peças.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="card-border bg-ever-surface/20 p-8 rounded-2xl flex flex-col items-center text-center">
+                            <div class="w-16 h-16 rounded-full bg-ever-surface flex items-center justify-center mb-6 shadow-neon border border-ever-neon/30">
+                                <span class="text-2xl text-ever-neon">🎥</span>
+                            </div>
+                            <h4 class="font-heading text-white font-light mb-3">Fim do Amadorismo (4K)</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed">Um feed que funciona como vitrine de grife, com captações cinematográficas que mostram a textura, o brilho e o movimento exato dos vestidos.</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="card-border bg-ever-surface/20 p-8 rounded-2xl flex flex-col items-center text-center">
+                            <div class="w-16 h-16 rounded-full bg-ever-surface flex items-center justify-center mb-6 shadow-neon border border-ever-neon/30">
+                                <span class="text-2xl text-ever-neon">🧘‍♀️</span>
+                            </div>
+                            <h4 class="font-heading text-white font-light mb-3">Captação Geofocada</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed">Ativação do Google Meu Negócio para atrair clientes que já estão fisicamente no complexo do Mega Moda.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. ROADMAP -->
+            <section class="py-24 px-6 border-b border-ever-surface bg-black/30 relative z-10">
+                <div class="max-w-4xl mx-auto animate-fade">
+                    <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2 text-center">Execução</h2>
+                    <h3 class="font-heading text-3xl font-normal text-white mb-16 text-center">Roadmap de Implementação <span class="font-sans text-ever-muted text-xl font-light block mt-2">(Primeiros 30 Dias)</span></h3>
+                    
+                    <div class="relative pl-8 md:pl-0">
+                        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-ever-surface transform -translate-x-1/2"></div>
+                        <div class="md:hidden absolute left-0 top-0 bottom-0 w-px bg-ever-surface"></div>
+
+                        <div class="space-y-12">
+                            <!-- Semana 1 -->
+                            <div class="relative flex flex-col md:flex-row items-center w-full">
+                                <div class="timeline-dot md:left-1/2 md:-ml-[8px]"></div>
+                                <div class="w-full md:w-1/2 md:pr-12 md:text-right text-left pl-6 md:pl-0">
+                                    <h4 class="font-heading text-xl font-light text-ever-neon mb-1">Semana 1</h4>
+                                    <strong class="font-heading text-white text-lg font-normal block mb-2">Abertura das Portas & Rebranding</strong>
+                                    <p class="text-ever-muted text-sm leading-relaxed">Ativação do número de WhatsApp na plataforma CliqBR e recriação da Identidade Visual.</p>
+                                </div>
+                                <div class="hidden md:block w-1/2 pl-12"></div>
+                            </div>
+
+                            <!-- Semana 2 -->
+                            <div class="relative flex flex-col md:flex-row items-center w-full">
+                                <div class="timeline-dot md:left-1/2 md:-ml-[8px]"></div>
+                                <div class="hidden md:block w-1/2 pr-12"></div>
+                                <div class="w-full md:w-1/2 pl-6 md:pl-12 text-left">
+                                    <h4 class="font-heading text-xl font-light text-ever-neon mb-1">Semana 2</h4>
+                                    <strong class="font-heading text-white text-lg font-normal block mb-2">O Domínio Local</strong>
+                                    <p class="text-ever-muted text-sm leading-relaxed">Estruturação completa do Google Meu Negócio e otimização da biografia e destaques do Instagram.</p>
+                                </div>
+                            </div>
+
+                            <!-- Semana 3 -->
+                            <div class="relative flex flex-col md:flex-row items-center w-full">
+                                <div class="timeline-dot md:left-1/2 md:-ml-[8px]"></div>
+                                <div class="w-full md:w-1/2 md:pr-12 md:text-right text-left pl-6 md:pl-0">
+                                    <h4 class="font-heading text-xl font-light text-ever-neon mb-1">Semana 3</h4>
+                                    <strong class="font-heading text-white text-lg font-normal block mb-2">Captação Premium</strong>
+                                    <p class="text-ever-muted text-sm leading-relaxed">Invasão da loja no Mega Moda Park com equipamentos de alto padrão para gravar vídeos com roteiro e qualidade imersiva.</p>
+                                </div>
+                                <div class="hidden md:block w-1/2 pl-12"></div>
+                            </div>
+
+                            <!-- Semana 4 -->
+                            <div class="relative flex flex-col md:flex-row items-center w-full">
+                                <div class="timeline-dot md:left-1/2 md:-ml-[8px]"></div>
+                                <div class="hidden md:block w-1/2 pr-12"></div>
+                                <div class="w-full md:w-1/2 pl-6 md:pl-12 text-left">
+                                    <h4 class="font-heading text-xl font-light text-ever-neon mb-1">Semana 4</h4>
+                                    <strong class="font-heading text-white text-lg font-normal block mb-2">Tração e Escala</strong>
+                                    <p class="text-ever-muted text-sm leading-relaxed">Ativação do tráfego pago focado em levar compradoras de moda festa para o novo funil de atendimento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. SERVIÇOS INDICADOS -->
+            <section class="py-24 px-6 border-b border-ever-surface overflow-hidden relative z-10">
+                <div class="max-w-6xl mx-auto relative animate-fade">
+                    <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2 text-center">Solução Completa</h2>
+                    <h3 class="font-heading text-3xl font-normal text-white mb-4 text-center">O Ecossistema Lolli Luxo</h3>
+                    <p class="text-center text-ever-muted mb-16 max-w-2xl mx-auto leading-relaxed">Para resolver esse cenário, não entregamos serviços isolados, mas departamentos que vamos assumir por você:</p>
+                    
+                    <img src="./ASSETS/Camada 2 copiar 2.png" alt="Design Tools" class="absolute -right-20 top-20 h-96 opacity-30 transform rotate-12 mix-blend-screen pointer-events-none">
+
+                    <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                        
+                        <!-- Pilar A -->
+                        <div class="card-border bg-ever-surface/30 p-8 rounded-2xl relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ever-neon to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                            <h4 class="font-heading text-xl text-white font-normal mb-6 border-b border-ever-surface pb-4">A. Depto de Imagem</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-ever-neon mr-3 mt-1">✓</span>
+                                    <div>
+                                        <strong class="font-heading text-sm text-ever-light font-light block">Branding e UI/UX Design</strong>
+                                        <span class="text-xs text-ever-muted leading-relaxed block mt-1">Reconstrução visual para estética "Dark Mode" ou "Premium" (tons escuros, neon ou metálicos) que destaca o produto noturno.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-ever-neon mr-3 mt-1">✓</span>
+                                    <div>
+                                        <strong class="font-heading text-sm text-ever-light font-light block">Produção Visual Cinematográfica</strong>
+                                        <span class="text-xs text-ever-muted leading-relaxed block mt-1">Visitas com câmera de alta fidelidade e drone para mostrar a loja e os detalhes das peças.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pilar B -->
+                        <div class="card-border bg-ever-surface/30 p-8 rounded-2xl relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ever-neon to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                            <h4 class="font-heading text-xl text-white font-normal mb-6 border-b border-ever-surface pb-4">B. Depto de Recepção</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-ever-neon mr-3 mt-1">✓</span>
+                                    <div>
+                                        <strong class="font-heading text-sm text-ever-light font-light block">Plataforma CliqBR</strong>
+                                        <span class="text-xs text-ever-muted leading-relaxed block mt-1">Centralização, fluxo de qualificação e direcionamento de atendimento no WhatsApp.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pilar C -->
+                        <div class="card-border bg-ever-surface/30 p-8 rounded-2xl relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ever-neon to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                            <h4 class="font-heading text-xl text-white font-normal mb-6 border-b border-ever-surface pb-4">C. Depto de Tração</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-ever-neon mr-3 mt-1">✓</span>
+                                    <div>
+                                        <strong class="font-heading text-sm text-ever-light font-light block">Posicionamento Local (Google) & Tráfego Pago</strong>
+                                        <span class="text-xs text-ever-muted leading-relaxed block mt-1">Captação de demanda ativa na região e atração em nível nacional.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. PLANOS E INVESTIMENTO -->
+            <section class="py-24 px-6 bg-[#0a0a0a] relative z-10 border-b border-ever-surface">
+                <div class="max-w-6xl mx-auto animate-fade">
+                    <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2 text-center">Transparência e Escala</h2>
+                    <h3 class="font-heading text-3xl font-normal text-white mb-4 text-center">Planos e Investimento</h3>
+                    <p class="text-center text-ever-muted mb-16 max-w-2xl mx-auto leading-relaxed">Estruturamos os Planos e Estruturas em duas etapas cruciais: a fundação tecnológica/visual e a manutenção da máquina de atração.</p>
+                    
+                    <!-- Ancoragem: Custo Equipe Interna -->
+                    <div class="bg-ever-surface/20 border border-ever-surface rounded-2xl p-8 mb-24 mx-auto max-w-4xl text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-ever-muted"></div>
+                        <h4 class="font-heading text-xl text-white font-normal mb-4">Quanto custa uma equipe de Marketing?</h4>
+                        <p class="text-ever-muted mb-8 text-sm max-w-2xl mx-auto leading-relaxed">Sabemos que Manter uma equipe interna de alto nível exige um investimento alto em salários, encargos e ferramentas. Para ter o básico, você precisaria de:</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-8">
+                            <div class="bg-ever-dark p-4 rounded-xl border border-ever-surface">
+                                <span class="font-heading block text-ever-light font-light mb-2">Social Media</span>
+                                <span class="text-ever-muted text-xs">R$ 2.500 - R$ 4.000</span>
+                            </div>
+                            <div class="bg-ever-dark p-4 rounded-xl border border-ever-surface">
+                                <span class="font-heading block text-ever-light font-light mb-2">Designer Gráfico</span>
+                                <span class="text-ever-muted text-xs">R$ 3.000 - R$ 5.000</span>
+                            </div>
+                            <div class="bg-ever-dark p-4 rounded-xl border border-ever-surface">
+                                <span class="font-heading block text-ever-light font-light mb-2">Copywriter</span>
+                                <span class="text-ever-muted text-xs">R$ 3.000 - R$ 5.000</span>
+                            </div>
+                            <div class="bg-ever-dark p-4 rounded-xl border border-ever-surface">
+                                <span class="font-heading block text-ever-light font-light mb-2">Vídeo Maker</span>
+                                <span class="text-ever-muted text-xs">R$ 3.500 - R$ 6.000</span>
+                            </div>
+                        </div>
+                        <p class="text-ever-light font-normal bg-ever-dark/50 inline-block px-6 py-3 rounded-full border border-ever-surface">
+                            Somando encargos, o custo ultrapassa <strong class="font-heading font-normal text-ever-neon ml-1 text-lg">R$ 15.000,00</strong> mensais. Com a Marketing ever.rest, você delega toda essa estrutura.
+                        </p>
+                    </div>
+
+                    <!-- BLOCO: PLANOS DE REESTRUTURAÇÃO (SETUP) -->
+                    <div class="mb-24">
+                        <div class="flex items-center justify-center mb-10">
+                            <div class="h-px w-12 bg-ever-surface"></div>
+                            <h3 class="font-heading text-xl md:text-2xl font-normal text-white px-6 uppercase tracking-wider text-center">Fase 1: Planos de Re-estruturação <span class="font-sans block text-sm text-ever-muted mt-1 font-normal capitalize tracking-normal">(Setup - Taxa Única)</span></h3>
+                            <div class="h-px w-12 bg-ever-surface"></div>
+                        </div>
+                        <p class="text-center text-ever-muted mb-12 max-w-2xl mx-auto text-sm">Este é um Projeto único, um Projeto de grande impacto momentâneo desenhado para arrumar a casa e construir o seu posicionamento.</p>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Plano Setup: BÁSICO -->
+                            <div class="bg-ever-surface/30 border border-ever-surface rounded-2xl p-8 flex flex-col hover:border-ever-muted transition-all">
+                                <div class="mb-8 border-b border-ever-surface pb-6">
+                                    <h4 class="font-heading text-2xl text-white font-normal">Plano 2 - (1° Mês) Básico</h4>
+                                </div>
+                                
+                                <ul class="space-y-4 mb-10 text-sm text-ever-light flex-grow">
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Reestruturação de Marca:</strong> Atualização do logotipo e adequação da paleta de cores.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Setup Básico CliqBR:</strong> Ativação do link de WhatsApp com fluxo de boas-vindas simples.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Produção de Vídeo Institucional - Básico:</strong> Gravação local para atualização imediata do feed.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Kit Redes Sociais. (Fixados e Destaques):</strong> Criação de Posts de apresentação.</div></li>
+                                </ul>
+
+                                <div class="mt-auto pt-6 border-t border-ever-surface">
+                                    <p class="font-heading text-xs text-ever-muted uppercase tracking-wider font-light mb-1">Investimento Único</p>
+                                    <p class="font-heading text-3xl font-normal text-white">R$ 4.500<span class="text-lg text-ever-muted font-light">,00</span></p>
+                                    <p class="text-xs text-ever-muted mt-2">Quatro mil e quinhentos reais.</p>
+                                </div>
+                            </div>
+
+                            <!-- Plano Setup: PRO -->
+                            <div class="bg-[#1a1f1b] border-2 border-ever-neon rounded-2xl p-8 relative flex flex-col shadow-neon transform md:-translate-y-2">
+                                <div class="absolute top-0 right-0 bg-ever-neon text-ever-dark text-xs font-normal px-4 py-1 rounded-bl-xl uppercase tracking-wider font-heading">Recomendado</div>
+                                <div class="mb-8 border-b border-ever-neon/20 pb-6">
+                                    <h4 class="font-heading text-2xl text-white font-normal">Plano 1 - (1° Mês) Pro</h4>
+                                </div>
+                                
+                                <ul class="space-y-4 mb-10 text-sm text-ever-light flex-grow">
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Reestruturação de Marca:</strong> Criação de manual de marca focada em estética Premium/Dark Mode, atualização de logo e paleta de cores magnética.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Setup Avançado CliqBR:</strong> Implementação imediata do link de atendimento, criação de fluxo de triagem inteligente (Varejo vs. Atacado) e direcionamento da equipe.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Produção de Vídeo Institucional - Pro:</strong> Captação de altíssima qualidade no Mega Moda Park com Camera SONY ALPHA 4K, Drone DJI 4K, Iluminação PRO para exibir a textura real dos vestidos.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Kit Redes Sociais. (Fixados e Destaques):</strong> Reestruturação dos perfis e criação de Posts de apresentação.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Posicionamento Local:</strong> Criação e otimização do Google Meu Negócio.</div></li>
+                                </ul>
+
+                                <div class="mt-auto pt-6 border-t border-ever-neon/20">
+                                    <p class="font-heading text-xs text-ever-neon uppercase tracking-wider font-light mb-1">Investimento Único</p>
+                                    <p class="font-heading text-3xl font-normal text-white">R$ 6.500<span class="text-lg text-ever-muted font-light">,00</span></p>
+                                    <p class="text-xs text-ever-muted mt-2">Seis mil e quinhentos reais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BLOCO: PLANOS MENSAIS (RECORRENTES) -->
+                    <div>
+                        <div class="flex items-center justify-center mb-10">
+                            <div class="h-px w-12 bg-ever-surface"></div>
+                            <h3 class="font-heading text-xl md:text-2xl font-normal text-white px-6 uppercase tracking-wider text-center">Fase 2: Planos Mensais de MKT <span class="font-sans block text-sm text-ever-muted mt-1 font-normal capitalize tracking-normal">(Operação Recorrente)</span></h3>
+                            <div class="h-px w-12 bg-ever-surface"></div>
+                        </div>
+                        <p class="text-center text-ever-muted mb-12 max-w-2xl mx-auto text-sm">Um Plano recorrente, com foco em desenvolver estratégias duradouras.</p>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Mensal: BÁSICO -->
+                            <div class="bg-ever-surface/30 border border-ever-surface rounded-2xl p-8 flex flex-col hover:border-ever-muted transition-all">
+                                <div class="mb-8 border-b border-ever-surface pb-6">
+                                    <h4 class="font-heading text-2xl text-white font-normal">Plano 2 - Básico (Recorrente)</h4>
+                                </div>
+                                
+                                <ul class="space-y-4 mb-10 text-sm text-ever-light flex-grow">
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Tráfego Pago (Tração):</strong> Campanhas focadas na base e distribuição do novo conteúdo premium.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Capitação presencial (1x na semana):</strong> Gravação semanal na loja.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Cronograma de postagem:</strong> Manutenção do novo padrão visual no feed.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-muted mr-3">▪</span> <div><strong class="font-heading font-normal">Gerenciamento de Redes Sociais.</strong></div></li>
+                                </ul>
+
+                                <div class="mt-auto pt-6 border-t border-ever-surface">
+                                    <p class="font-heading text-xs text-ever-muted uppercase tracking-wider font-light mb-1">Investimento Mensal</p>
+                                    <p class="font-heading text-3xl font-normal text-white">R$ 3.500<span class="text-lg text-ever-muted font-light">,00</span></p>
+                                    <p class="text-xs text-ever-muted mt-2">Três mil e quinhentos reais.</p>
+                                </div>
+                            </div>
+
+                            <!-- Mensal: PRO -->
+                            <div class="bg-[#1a1f1b] border-2 border-ever-neon rounded-2xl p-8 relative flex flex-col shadow-neon transform md:-translate-y-2">
+                                <div class="absolute top-0 right-0 bg-ever-neon text-ever-dark text-xs font-normal px-4 py-1 rounded-bl-xl uppercase tracking-wider font-heading">Recomendado</div>
+                                <div class="mb-8 border-b border-ever-neon/20 pb-6">
+                                    <h4 class="font-heading text-2xl text-white font-normal">Plano 1 - Pro (Recorrente)</h4>
+                                </div>
+                                
+                                <ul class="space-y-4 mb-10 text-sm text-ever-light flex-grow">
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Tráfego Pago (Alta Intenção):</strong> Campanhas direcionadas para atrair atacadistas de moda festa e ativação de clientes locais.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Capitação presencial (2x na semana):</strong> Gravação de vídeo de alto padrão na loja, mostrando as araras e novidades semanais.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Cronograma de postagem:</strong> Planejamento estratégico de conteúdo mantendo a vitrine ativa.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Gerenciamento de Redes Sociais:</strong> Acompanhamento contínuo da saúde da marca digital.</div></li>
+                                    <li class="flex items-start"><span class="text-ever-neon mr-3">✓</span> <div><strong class="font-heading font-normal">Suporte CliqBR:</strong> Monitoramento da estabilidade do fluxo de atendimento.</div></li>
+                                </ul>
+
+                                <div class="mt-auto pt-6 border-t border-ever-neon/20">
+                                    <p class="font-heading text-xs text-ever-neon uppercase tracking-wider font-light mb-1">Investimento Mensal</p>
+                                    <p class="font-heading text-3xl font-normal text-white">R$ 4.800<span class="text-lg text-ever-muted font-light">,00</span></p>
+                                    <p class="text-xs text-ever-muted mt-2">Quatro mil e oitocentos reais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 8. FECHAMENTO -->
+            <section class="py-16 px-6 relative text-center flex flex-col items-center justify-center relative z-10 bg-[#0F0F0F]">
+                
+                <div class="max-w-3xl mx-auto relative z-10 animate-fade">
+                    
+                    <img src="./ASSETS/PERFIL 1.png" alt="ever.rest Sign" class="w-24 h-24 rounded-full mx-auto mb-8 border border-ever-surface shadow-neon">
+                    
+                    <blockquote class="text-xl md:text-2xl text-ever-light font-light italic leading-relaxed mb-12">
+                        "Equipe Lolli Luxo, o potencial das peças de vocês é inquestionável, mas a vitrine digital atual e o atendimento trancado estão deixando dinheiro na mesa. Com a implantação do nosso ecossistema e da plataforma CliqBR, nós vamos abrir as portas da loja para o Brasil e envelopar a marca de vocês com o verdadeiro peso de uma grife do Mega Moda Park. Vocês cuidam dos vestidos e da equipe; a atração, a recepção e o visual cinematográfico ficam com a Marketing ever.rest."
+                    </blockquote>
+                    
+                    <button class="font-heading bg-ever-neon text-ever-dark font-normal text-lg px-10 py-4 rounded-full hover:scale-105 hover:shadow-neon-strong transition-all duration-300">
+                        Vamos abrir essas portas juntas?
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="py-8 text-center bg-[#0a0a0a] border-t border-ever-surface relative z-10 w-full mt-auto">
+            <p class="text-xs text-ever-muted font-normal">© 2026 Marketing ever.rest. Proposta Confidencial.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
