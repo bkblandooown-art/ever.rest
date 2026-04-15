@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ever.rest | Alcance o topo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ever-dark': '#0F0F0F',
+                        'ever-neon': '#00EA62',
+                        'ever-light': '#D9D9D9',
+                        'ever-muted': '#AEAEAE',
+                        'ever-surface': '#313131',
+                    },
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        heading: ['Kanit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(0, 234, 98, 0.15)',
+                        'neon-strong': '0 0 30px rgba(0, 234, 98, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0F0F0F;
+            color: #D9D9D9;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        .bg-glow {
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(0,234,98,0.08) 0%, rgba(15,15,15,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .bg-glow-1 { top: -5%; left: -10%; }
+        .bg-glow-2 { top: 50%; right: -20%; }
+
+        .card-border {
+            border: 1px solid #313131;
+            transition: all 0.3s ease;
+        }
+        .card-border:hover {
+            border-color: #00EA62;
+            box-shadow: 0 0 15px rgba(0, 234, 98, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Animação suave de entrada */
+        @keyframes fadeInUP {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade {
+            animation: fadeInUP 0.8s ease forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+
+        /* Corte diagonal */
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        /* Animação do Letreiro (Marquee) */
+        .marquee-container {
+            display: flex;
+            width: 200%;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Animação de Rotação (Selo/Estrela) */
+        @keyframes spin-slow {
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 15s linear infinite;
+        }
+    </style>
+</head>
+<body class="antialiased bg-ever-dark">
+
+    <div class="relative flex flex-col min-h-screen w-full overflow-hidden">
+        
+        <div class="bg-glow bg-glow-1 z-0"></div>
+        <div class="bg-glow bg-glow-2 z-0"></div>
+
+        <!-- MENU SUPERIOR -->
+        <nav class="absolute top-0 left-0 w-full z-50 p-6 flex justify-between items-center">
+            <img src="./ASSETS/LOGO - C.png" alt="ever.rest" class="h-10 md:h-12 mix-blend-screen opacity-90">
+            <a href="#" class="text-sm font-heading text-white border border-ever-surface px-6 py-2 rounded-full hover:border-ever-neon transition-colors">Fale Conosco</a>
+        </nav>
+
+        <main class="flex-grow relative z-10">
+            
+            <!-- 1. HERO SECTION CENTRALIZADO -->
+            <section class="relative pt-32 pb-40 md:pt-40 md:pb-56 clip-diagonal bg-[#0a0a0a]">
+                <div class="absolute inset-0 z-0">
+                    <img src="./ASSETS/BG.png" alt="Visão do Topo" class="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#0F0F0F] via-[#0F0F0F]/80 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] to-transparent"></div>
+                </div>
+
+                <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center text-center animate-fade">
+                    
+                    <!-- Logo Centralizada -->
+                    <img src="./ASSETS/LOGO - C.png" alt="ever.rest" class="h-20 md:h-24 mb-10 mix-blend-screen opacity-90 drop-shadow-lg">
+                    
+                    <!-- Título -->
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-[56px] font-normal text-white leading-tight tracking-tight mb-6 drop-shadow-2xl">
+                        Alcance o topo do seu mercado.<br> 
+                        <span class="text-ever-neon drop-shadow-md">E finalmente, descanse.</span>
+                    </h1>
+                    
+                    <!-- Subtítulo -->
+                    <p class="font-sans text-sm md:text-base lg:text-lg text-ever-light mb-10 font-light max-w-2xl leading-relaxed drop-shadow-md">
+                        Estruturação sólida, tráfego de alta performance e branding irresistível. Nossa equipe de especialistas assume a linha de frente do seu crescimento para que você tenha paz de espírito e foque no que realmente importa.
+                    </p>
+                    
+                    <!-- CTA -->
+                    <a href="#" class="inline-block font-heading bg-ever-neon text-ever-dark font-normal text-lg px-10 py-4 rounded-full hover:scale-105 hover:shadow-neon-strong transition-all duration-300">
+                        Iniciar Meu Projeto de 3 Meses
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- 2. ESTATÍSTICAS GIGANTES -->
+            <section class="py-12 px-6 relative z-20 -mt-24 md:-mt-32 mb-12">
+                <div class="max-w-5xl mx-auto bg-ever-dark/80 backdrop-blur-xl border border-ever-surface rounded-[40px] p-8 md:p-12 shadow-2xl animate-fade delay-300">
+                    <div class="flex flex-col md:flex-row justify-around items-center gap-10 text-center">
+                        <div>
+                            <span class="font-heading text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-ever-neon to-white block mb-2">+10</span>
+                            <span class="text-ever-muted font-heading tracking-widest uppercase text-xs md:text-sm">Anos de Experiência</span>
+                        </div>
+                        <div class="hidden md:block w-px h-16 bg-ever-surface"></div>
+                        <div>
+                            <span class="font-heading text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-ever-neon to-white block mb-2">+30</span>
+                            <span class="text-ever-muted font-heading tracking-widest uppercase text-xs md:text-sm">Empresas Escaladas</span>
+                        </div>
+                        <div class="hidden md:block w-px h-16 bg-ever-surface"></div>
+                        <div>
+                            <span class="font-heading text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-ever-neon to-white block mb-2">+150k</span>
+                            <span class="text-ever-muted font-heading tracking-widest uppercase text-xs md:text-sm">Em Tráfego Gerido</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SOBRE NÓS E DINAMISMO VISUAL -->
+            <section class="py-24 px-6 relative">
+                
+                <!-- Selo/Estrela Giratória Decorativa -->
+                <div class="absolute right-[-5%] top-[10%] opacity-20 pointer-events-none animate-spin-slow z-0 hidden lg:block">
+                    <svg width="400" height="400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 0L112.266 38.3842L150 29.2893L137.734 67.6735L170.711 85.3553L132.326 97.6215L150 135.355L112.266 123.089L100 161.474L87.7335 123.089L50 135.355L67.6735 97.6215L29.2893 85.3553L62.2665 67.6735L50 29.2893L87.7335 38.3842L100 0Z" fill="#00EA62"/>
+                    </svg>
+                </div>
+
+                <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                    
+                    <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-[#1a1a1a] border border-ever-surface group">
+                        <!-- Imagem Placeholder Genérica da Agência -->
+                        <div class="w-full h-full flex flex-col items-center justify-center p-8">
+                            <h2 class="font-heading text-5xl text-ever-surface font-bold opacity-30 transform -rotate-90 whitespace-nowrap absolute -left-20">EVER.REST</h2>
+                            <img src="./ASSETS/Agrupar 1.png" alt="Selo Ever.rest" class="w-48 opacity-80 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                    <div class="animate-fade delay-100">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">Quem Somos</h2>
+                        <h3 class="font-heading text-4xl md:text-5xl font-normal text-white mb-6 leading-tight">O Fim dos Incêndios Comerciais.</h3>
+                        
+                        <p class="text-ever-muted text-lg mb-6 leading-relaxed">
+                            O nome <strong class="text-white font-normal font-heading">Ever.rest</strong> carrega a nossa maior promessa a você: <em>ever resting</em> (sempre descansando). Acreditamos que o dono do negócio não deveria perder noites de sono tentando decifrar algoritmos.
+                        </p>
+                        
+                        <!-- Lista com ícones fortes -->
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center gap-4 bg-ever-surface/20 p-4 rounded-xl border border-ever-surface">
+                                <div class="w-10 h-10 rounded-full bg-ever-neon/20 flex items-center justify-center text-ever-neon">✓</div>
+                                <span class="text-white font-heading">Agência Boutique, enxuta e cirúrgica.</span>
+                            </li>
+                            <li class="flex items-center gap-4 bg-ever-surface/20 p-4 rounded-xl border border-ever-surface">
+                                <div class="w-10 h-10 rounded-full bg-ever-neon/20 flex items-center justify-center text-ever-neon">✓</div>
+                                <span class="text-white font-heading">Estratégias validadas no campo de batalha.</span>
+                            </li>
+                            <li class="flex items-center gap-4 bg-ever-surface/20 p-4 rounded-xl border border-ever-surface">
+                                <div class="w-10 h-10 rounded-full bg-ever-neon/20 flex items-center justify-center text-ever-neon">✓</div>
+                                <span class="text-white font-heading">Foco absoluto em Escala e Retorno (ROI).</span>
+                            </li>
+                        </ul>
+
+                        <a href="#" class="inline-block font-heading text-ever-neon border border-ever-neon px-8 py-3 rounded-full hover:bg-ever-neon hover:text-ever-dark transition-all duration-300">
+                            Falar com a Equipe
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. COMO TRABALHAMOS (FLUXOGRAMA) -->
+            <section class="py-24 px-6 relative bg-ever-dark border-t border-ever-surface overflow-hidden">
+                
+                <!-- Divisão de Página Estilo Banner Cruzado -->
+                <div class="absolute top-0 left-1/2 w-[150vw] h-0 flex items-center justify-center pointer-events-none z-0 -translate-x-1/2 mt-20">
+                    
+                    <!-- Faixa 1 (Texto Animado) -->
+                    <div class="absolute w-full h-14 md:h-16 bg-ever-surface/40 backdrop-blur-md border-y border-ever-neon/20 flex items-center overflow-hidden transform rotate-[5deg] shadow-[0_0_30px_rgba(0,234,98,0.1)]">
+                        <div class="marquee-container opacity-80">
+                            <!-- Bloco 1 -->
+                            <div class="flex-1 flex justify-around items-center">
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                            </div>
+                            <!-- Bloco 2 (Para loop contínuo) -->
+                            <div class="flex-1 flex justify-around items-center">
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Faixa 2 invertida (Texto Animado) -->
+                    <div class="absolute w-full h-14 md:h-16 bg-ever-surface/40 backdrop-blur-md border-y border-ever-neon/20 flex items-center overflow-hidden transform -rotate-[5deg] shadow-[0_0_30px_rgba(0,234,98,0.1)]">
+                        <!-- 'animation-direction: reverse' faz a segunda faixa rolar para o outro lado -->
+                        <div class="marquee-container opacity-80" style="animation-direction: reverse;">
+                            <!-- Bloco 1 -->
+                            <div class="flex-1 flex justify-around items-center">
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                            </div>
+                            <!-- Bloco 2 (Para loop contínuo) -->
+                            <div class="flex-1 flex justify-around items-center">
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                                <span class="font-heading text-lg md:text-xl font-bold uppercase tracking-widest text-white">EVER.REST</span>
+                                <svg class="w-5 h-5 text-ever-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 6 5-8 4 14H3z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-6xl mx-auto animate-fade relative z-10">
+                    <div class="text-center mb-16 max-w-3xl mx-auto pt-8">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">A Jornada</h2>
+                        <h3 class="font-heading text-4xl md:text-5xl font-normal text-white mb-6">Nosso Método de Escala</h3>
+                        <p class="text-ever-muted leading-relaxed">
+                            Não aprisionamos clientes; nós os preparamos para o sucesso. Toda grande jornada começa com um <strong class="text-white font-normal font-heading">Contrato de Estruturação e Experiência de 3 Meses.</strong> Nós "arrumamos a casa" antes de convidar as visitas.
+                        </p>
+                    </div>
+
+                    <!-- Fluxograma com Setas -->
+                    <div class="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-2">
+                        
+                        <!-- Step 1 -->
+                        <div class="card-border bg-ever-surface/30 backdrop-blur-md p-8 rounded-2xl text-center w-full lg:w-1/4 relative">
+                            <span class="text-ever-neon font-heading text-5xl opacity-20 absolute -top-4 right-4">01</span>
+                            <h4 class="text-white font-heading text-lg font-normal mb-3 mt-4">Estudo</h4>
+                            <p class="text-xs text-ever-muted">Imersão total no seu negócio, mercado e público.</p>
+                        </div>
+
+                        <!-- Seta -->
+                        <div class="hidden lg:block text-ever-surface text-3xl">➔</div>
+                        <div class="lg:hidden text-ever-surface text-3xl transform rotate-90">➔</div>
+
+                        <!-- Step 2 -->
+                        <div class="card-border bg-ever-surface/30 backdrop-blur-md p-8 rounded-2xl text-center w-full lg:w-1/4 relative">
+                            <span class="text-ever-neon font-heading text-5xl opacity-20 absolute -top-4 right-4">02</span>
+                            <h4 class="text-white font-heading text-lg font-normal mb-3 mt-4">Diagnóstico</h4>
+                            <p class="text-xs text-ever-muted">Identificação cirúrgica de gargalos e oportunidades.</p>
+                        </div>
+
+                        <!-- Seta -->
+                        <div class="hidden lg:block text-ever-surface text-3xl">➔</div>
+                        <div class="lg:hidden text-ever-surface text-3xl transform rotate-90">➔</div>
+
+                        <!-- Step 3 -->
+                        <div class="card-border bg-ever-surface/30 backdrop-blur-md p-8 rounded-2xl text-center w-full lg:w-1/4 relative">
+                            <span class="text-ever-neon font-heading text-5xl opacity-20 absolute -top-4 right-4">03</span>
+                            <h4 class="text-white font-heading text-lg font-normal mb-3 mt-4">Plano</h4>
+                            <p class="text-xs text-ever-muted">Estratégia sob medida de branding, tráfego e vendas.</p>
+                        </div>
+
+                        <!-- Seta -->
+                        <div class="hidden lg:block text-ever-surface text-3xl">➔</div>
+                        <div class="lg:hidden text-ever-surface text-3xl transform rotate-90">➔</div>
+
+                        <!-- Step 4 -->
+                        <div class="card-border bg-ever-surface/30 backdrop-blur-md p-8 rounded-2xl text-center w-full lg:w-1/4 relative bg-ever-neon/5 border-ever-neon/30">
+                            <span class="text-ever-neon font-heading text-5xl opacity-20 absolute -top-4 right-4">04</span>
+                            <h4 class="text-ever-neon font-heading text-lg font-normal mb-3 mt-4">Execução</h4>
+                            <p class="text-xs text-ever-muted">Implementação implacável com foco absoluto em faturamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. GRANDES PROJETOS (FORMATO CARD COM IMAGEM MAIOR E BOTAO) -->
+            <section class="py-24 px-6 bg-[#0a0a0a] border-y border-ever-surface">
+                <div class="max-w-6xl mx-auto animate-fade">
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                        <div>
+                            <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">Nosso Portfólio</h2>
+                            <h3 class="font-heading text-4xl md:text-5xl font-normal text-white">Projetos de Impacto</h3>
+                        </div>
+                        <a href="#" class="hidden md:inline-block text-ever-muted hover:text-ever-neon transition-colors font-heading text-sm mt-4 md:mt-0">Ver todos os cases ➔</a>
+                    </div>
+
+                    <!-- Grid de Projetos -->
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        
+                        <!-- Card 1 -->
+                        <div class="card-border bg-[#121212] rounded-[2rem] overflow-hidden flex flex-col group shadow-2xl">
+                            <!-- Imagem Maior (Topo 60%) -->
+                            <div class="w-full h-64 relative bg-[#1a1a1a] overflow-hidden">
+                                <img src="./ASSETS/26ce41e2-b79a-4756-b339-84b3b6f93519.png" alt="Solidy Benefícios" class="absolute inset-0 w-full h-full object-cover object-top opacity-60 group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-90"></div>
+                            </div>
+                            
+                            <!-- Conteúdo -->
+                            <div class="p-6 md:p-8 flex-grow flex flex-col bg-[#121212]">
+                                <div class="mb-4">
+                                    <h4 class="font-heading text-xl font-bold text-white leading-tight mb-1">Solidy Benefícios & Loca Vibe</h4>
+                                    <span class="text-sm text-ever-muted font-normal block">Tráfego & Escala</span>
+                                </div>
+                                <p class="text-sm text-ever-light leading-relaxed mb-6 flex-grow">
+                                    Gerenciamento de +R$ 58 mil em campanhas de performance, escala agressiva de captação de leads e maximização de conversões.
+                                </p>
+                                <a href="#" class="bg-white text-black py-2.5 px-4 rounded-full font-bold text-[13px] hover:bg-ever-neon hover:text-black transition-colors text-center w-1/2">
+                                    Fale conosco
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="card-border bg-[#121212] rounded-[2rem] overflow-hidden flex flex-col group shadow-2xl">
+                            <!-- Imagem Maior (Topo 60%) -->
+                            <div class="w-full h-64 relative bg-[#1a1a1a] overflow-hidden">
+                                <img src="./ASSETS/BG.png" alt="Atlético GO" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-90"></div>
+                            </div>
+                            
+                            <!-- Conteúdo -->
+                            <div class="p-6 md:p-8 flex-grow flex flex-col bg-[#121212]">
+                                <div class="mb-4">
+                                    <h4 class="font-heading text-xl font-bold text-white leading-tight mb-1">Atlético GO & Camboriú FC</h4>
+                                    <span class="text-sm text-ever-muted font-normal block">Branding & Coleções</span>
+                                </div>
+                                <p class="text-sm text-ever-light leading-relaxed mb-6 flex-grow">
+                                    Criação de identidade visual e coleções esportivas oficiais. Branding focado em desejo e vendas explosivas para torcedores.
+                                </p>
+                                <a href="#" class="bg-white text-black py-2.5 px-4 rounded-full font-bold text-[13px] hover:bg-ever-neon hover:text-black transition-colors text-center w-1/2">
+                                    Fale conosco
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="card-border bg-[#121212] rounded-[2rem] overflow-hidden flex flex-col group shadow-2xl">
+                            <!-- Imagem Maior (Topo 60%) -->
+                            <div class="w-full h-64 relative bg-[#1a1a1a] overflow-hidden">
+                                <img src="./ASSETS/EDITION.png" alt="Saga Motors" class="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-90"></div>
+                            </div>
+                            
+                            <!-- Conteúdo -->
+                            <div class="p-6 md:p-8 flex-grow flex flex-col bg-[#121212]">
+                                <div class="mb-4">
+                                    <h4 class="font-heading text-xl font-bold text-white leading-tight mb-1">Saga Motors & Dona Lia</h4>
+                                    <span class="text-sm text-ever-muted font-normal block">Social Media & Copy</span>
+                                </div>
+                                <p class="text-sm text-ever-light leading-relaxed mb-6 flex-grow">
+                                    Revolução na percepção de marca através de estratégias avançadas de Copywriting e narrativas visuais.
+                                </p>
+                                <a href="#" class="bg-white text-black py-2.5 px-4 rounded-full font-bold text-[13px] hover:bg-ever-neon hover:text-black transition-colors text-center w-1/2">
+                                    Fale conosco
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. POR QUE ESCOLHER A EVER.REST & SERVIÇOS -->
+            <section class="py-24 px-6 relative overflow-hidden">
+                <div class="max-w-6xl mx-auto animate-fade">
+                    
+                    <div class="text-center mb-16">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">Diferencial</h2>
+                        <h3 class="font-heading text-4xl md:text-5xl font-normal text-white mb-6">Nossos Serviços & Cultura</h3>
+                    </div>
+
+                    <!-- Grid de 3 Colunas para os serviços e diferenciais -->
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div class="bg-ever-surface/20 p-10 rounded-3xl border border-ever-surface relative overflow-hidden group">
+                            <div class="w-12 h-1 bg-ever-neon mb-6 transition-all duration-300 group-hover:w-1/2"></div>
+                            <h4 class="font-heading text-white text-2xl font-normal mb-4">Design & Branding</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed mb-4">A construção da alma e da vitrine do seu negócio. Fotografia, produção visual, kit redes sociais e endomarketing.</p>
+                            <p class="text-xs font-bold text-white uppercase tracking-wider mt-auto pt-4 border-t border-ever-surface">Foco em Qualidade</p>
+                        </div>
+
+                        <div class="bg-ever-surface/20 p-10 rounded-3xl border border-ever-surface relative overflow-hidden group">
+                            <div class="w-12 h-1 bg-ever-neon mb-6 transition-all duration-300 group-hover:w-1/2"></div>
+                            <h4 class="font-heading text-white text-2xl font-normal mb-4">Tráfego & Estratégias</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed mb-4">O motor de crescimento. Tráfego pago cirúrgico, Inbound/Growth Marketing e consultoria de eficiência de vendas.</p>
+                            <p class="text-xs font-bold text-white uppercase tracking-wider mt-auto pt-4 border-t border-ever-surface">Visão 360º</p>
+                        </div>
+
+                        <div class="bg-ever-surface/20 p-10 rounded-3xl border border-ever-neon/30 relative overflow-hidden group bg-gradient-to-b from-[#00EA62]/5 to-transparent">
+                            <div class="w-12 h-1 bg-ever-neon mb-6 transition-all duration-300 group-hover:w-1/2"></div>
+                            <h4 class="font-heading text-white text-2xl font-normal mb-4">Copy & Tech (CliqBR)</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed mb-4">Voz e tecnologia. Implementamos o CliqBR para multiatendimento no WhatsApp, organizando e blindando seu comercial.</p>
+                            <p class="text-xs font-bold text-ever-neon uppercase tracking-wider mt-auto pt-4 border-t border-ever-surface">Serviço Exclusivo</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. O ESQUADRÃO (Especialistas em Grid Horizontal) -->
+            <section class="py-24 px-6 bg-[#0a0a0a] border-y border-ever-surface">
+                <div class="max-w-6xl mx-auto animate-fade">
+                    <div class="text-center mb-16">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">Quem Executa</h2>
+                        <h3 class="font-heading text-4xl md:text-5xl font-normal text-white">Conheça os Especialistas</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Especialista 1 -->
+                        <div class="card-border bg-ever-dark rounded-3xl overflow-hidden group">
+                            <div class="h-80 bg-[#1a1a1a] relative overflow-hidden flex items-center justify-center">
+                                <span class="text-ever-surface text-sm font-heading font-bold uppercase tracking-widest z-10">[FOTO ESP 1]</span>
+                                <div class="absolute inset-0 bg-gradient-to-t from-ever-dark to-transparent z-0"></div>
+                            </div>
+                            <div class="p-8 relative z-20 -mt-10">
+                                <span class="bg-ever-neon text-ever-dark text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Design & Gestão</span>
+                                <h4 class="font-heading text-2xl text-white font-normal mb-2">Especialista 1</h4>
+                                <p class="text-sm text-ever-muted leading-relaxed">10 anos de mercado moldando marcas de valor absoluto. O mestre por trás do Design Gráfico e Branding.</p>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 2 -->
+                        <div class="card-border bg-ever-dark rounded-3xl overflow-hidden group transform md:-translate-y-6">
+                            <div class="h-80 bg-[#1a1a1a] relative overflow-hidden flex items-center justify-center">
+                                <span class="text-ever-surface text-sm font-heading font-bold uppercase tracking-widest z-10">[FOTO ESP 2]</span>
+                                <div class="absolute inset-0 bg-gradient-to-t from-ever-dark to-transparent z-0"></div>
+                            </div>
+                            <div class="p-8 relative z-20 -mt-10">
+                                <span class="bg-ever-neon text-ever-dark text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Social & Growth</span>
+                                <h4 class="font-heading text-2xl text-white font-normal mb-2">Especialista 2</h4>
+                                <p class="text-sm text-ever-muted leading-relaxed">Transformando atenção em lucro. A mente por trás de Copywriting, Roteiros Persuasivos e Growth Marketing.</p>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 3 -->
+                        <div class="card-border bg-ever-dark rounded-3xl overflow-hidden group">
+                            <div class="h-80 bg-[#1a1a1a] relative overflow-hidden flex items-center justify-center">
+                                <span class="text-ever-surface text-sm font-heading font-bold uppercase tracking-widest z-10">[FOTO ESP 3]</span>
+                                <div class="absolute inset-0 bg-gradient-to-t from-ever-dark to-transparent z-0"></div>
+                            </div>
+                            <div class="p-8 relative z-20 -mt-10">
+                                <span class="bg-ever-neon text-ever-dark text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Tráfego & Vendas</span>
+                                <h4 class="font-heading text-2xl text-white font-normal mb-2">Especialista 3</h4>
+                                <p class="text-sm text-ever-muted leading-relaxed">4 anos no campo de batalha da conversão. O estrategista implacável de Tráfego Pago, SDR e Fechamento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. CURSOS E CONSULTORIA (Com Foto ao Lado) -->
+            <section class="py-24 px-6 relative">
+                <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden animate-fade bg-ever-surface border border-ever-surface shadow-2xl">
+                        <div class="w-full h-full flex flex-col items-center justify-center text-center p-8 bg-[#1a1a1a]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-ever-surface mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <span class="text-ever-muted font-heading">[Foto Treinamento Corporativo]</span>
+                        </div>
+                    </div>
+
+                    <div class="animate-fade delay-100">
+                        <h2 class="font-heading text-xs text-ever-neon uppercase tracking-widest font-light mb-2">Educação Corporativa</h2>
+                        <h3 class="font-heading text-4xl font-normal text-white mb-6">Por que damos Curso?</h3>
+                        <p class="font-heading text-xl text-ever-light mb-8 font-light italic border-l-4 border-ever-neon pl-4">"Te levamos ao topo treinado para continuar sozinho."</p>
+                        
+                        <p class="text-ever-muted mb-6 leading-relaxed">
+                            A maioria das agências cria uma "caixa preta" para manter você refém de contratos intermináveis. A Ever.rest faz exatamente o oposto. Acreditamos que a verdadeira parceria gera independência.
+                        </p>
+                        <p class="text-ever-muted leading-relaxed">
+                            Através das nossas consultorias e cursos, entregamos a expertise sênior do nosso time. Nosso objetivo não é prender a sua empresa, mas garantir que você e sua equipe aprendam a estruturar, gerir e, no futuro, até mesmo contratar seu próprio time interno. O conhecimento fica na sua casa.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 9. FAQ -->
+            <section class="py-24 px-6 border-t border-ever-surface relative">
+                <div class="max-w-4xl mx-auto animate-fade">
+                    <h2 class="font-heading text-3xl md:text-4xl font-normal text-white mb-12 text-center">Perguntas Frequentes</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-ever-surface/20 border border-ever-surface p-8 rounded-2xl">
+                            <h4 class="font-heading text-xl text-white font-normal mb-3 flex items-center"><span class="text-ever-neon mr-3">✦</span> Quais nichos a Ever.rest atende?</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed pl-8">
+                                Atendemos uma variedade de nichos, pois nossa metodologia de escala é adaptável e focada em fundamentos de negócios. No entanto, mantemos um limite anual bastante rígido de empresas atendidas. Fazemos isso para garantir que nossa equipe sênior entregue profundidade e dedicação total a cada projeto ativo.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-ever-surface/20 border border-ever-surface p-8 rounded-2xl">
+                            <h4 class="font-heading text-xl text-white font-normal mb-3 flex items-center"><span class="text-ever-neon mr-3">✦</span> Vocês fazem atendimento presencial?</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed pl-8">
+                                Sim! Acreditamos fortemente no poder das conexões olho no olho e do alinhamento físico. Nosso atendimento presencial é focado nas cidades de Goiânia/GO e São José dos Campos/SP.
+                            </p>
+                        </div>
+
+                        <div class="bg-ever-surface/20 border border-ever-surface p-8 rounded-2xl">
+                            <h4 class="font-heading text-xl text-white font-normal mb-3 flex items-center"><span class="text-ever-neon mr-3">✦</span> Vocês mesmos fazem a captação de fotos e vídeos?</h4>
+                            <p class="text-sm text-ever-muted leading-relaxed pl-8">
+                                Sim. A rotina do seu negócio precisa de agilidade sem perder a sofisticação. Para isso, possuímos equipamento próprio de ponta (como iPhone 14 Pro e câmeras EOS de alta performance) para toda a captação audiovisual cotidiana. Nós só terceirizamos produções de altíssima complexidade (como padrão de Cinema ou comerciais de TV) quando a estratégia específica do cliente exige.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER COM MARQUEE (LETREIRO ANIMADO) -->
+        <footer class="mt-auto relative border-t border-ever-neon bg-ever-dark py-4 overflow-hidden z-20">
+            <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-ever-dark to-transparent z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-ever-dark to-transparent z-10"></div>
+            
+            <div class="marquee-container text-ever-neon font-heading text-xl font-bold uppercase tracking-widest whitespace-nowrap">
+                <div class="flex-1 flex justify-around">
+                    <span>ever.rest até o topo com você.</span>
+                    <span>ever.rest até o topo com você.</span>
+                    <span>ever.rest até o topo com você.</span>
+                    <span>ever.rest até o topo com você.</span>
+                </div>
+                <div class="flex-1 flex justify-around">
+                    <span>ever.rest até o topo com você.</span>
+                    <span>ever.rest até o topo com você.</span>
+                    <span>ever.rest até o topo com você.</span>
+                    <span>ever.rest até o topo com você.</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
